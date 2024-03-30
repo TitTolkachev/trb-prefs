@@ -70,7 +70,7 @@ public class PreferencesController : ControllerBase
     }
     
     [HttpPost]
-    [Route("hidden-account")]
+    [Route("hide-account")]
     [SwaggerOperation(Summary = "Hide user account")]
     public async Task<IActionResult> HideAccount([FromBody] AccountDto body)
     {
