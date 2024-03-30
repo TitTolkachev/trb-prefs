@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  trb-prefs-backend:
+    container_name: trb-prefs-backend
+    build: ./
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8085:8080"
+    depends_on:
+      - trb-prefs-db
+    env_file:
+      - .env
+  trb-prefs-db:
+    container_name: trb-prefs-db
+    image: postgres:15
+    environment:
+      POSTGRES_DB: trb-prefs
+      POSTGRES_USER: trb-prefs
+      POSTGRES_PASSWORD: trb-prefs
+    ports:
+      - "5435:5432"
+    volumes:
+      - trb-prefs-db:/var/lib/postgresql/data
+  
+volumes:
+  trb-prefs-db: { }
