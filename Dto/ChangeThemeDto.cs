@@ -5,5 +5,5 @@ namespace trb_prefs.Dto;
 public class ChangeThemeDto
 {
     [Required] public string Token { get; set; } = null!;
-    [Required] public bool IsThemeDark { get; set; }
+    [Required] public bool ThemeDark { get; set; }
 }
