@@ -44,11 +44,8 @@ var context = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
 context?.Database.Migrate();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.MapControllers();
 
